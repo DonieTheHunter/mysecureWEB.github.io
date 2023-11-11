@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+</head>
+<body>
+
+    <div id="password-container">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" />
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div id="pdf-container" style="display:none;">
+        <embed src="MC.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+
+    <script>
+        function checkPassword() {
+            var enteredPassword = document.getElementById("password").value;
+            var correctPassword = "hello"; // Replace with your actual password
+
+            if (enteredPassword === correctPassword) {
+                document.getElementById("password-container").style.display = "none";
+                document.getElementById("pdf-container").style.display = "block";
+            } else {
+                alert("Incorrect password. Try again.");
+            }
+        }
+    </script>
+
+</body>
+</html>
